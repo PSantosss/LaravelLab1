@@ -23,6 +23,11 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @livewire('navigation-menu')
 
+            <!-- Display logged in user info -->
+            @auth
+                <p class="text-center text-gray-700">Logged in as: {{ Auth::user()->name }} (ID: {{ Auth::user()->id }})</p>
+            @endauth
+
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white dark:bg-gray-800 shadow">
